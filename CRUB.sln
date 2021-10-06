@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUB", "CRUB\CRUB.csproj", "{B5707344-4B75-46A9-80D2-6C030646B0EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5707344-4B75-46A9-80D2-6C030646B0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5707344-4B75-46A9-80D2-6C030646B0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5707344-4B75-46A9-80D2-6C030646B0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5707344-4B75-46A9-80D2-6C030646B0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {282961F1-0322-448F-843C-B0F4F3A302B6}
+	EndGlobalSection
+EndGlobal
