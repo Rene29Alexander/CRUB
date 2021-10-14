@@ -16,7 +16,7 @@ namespace CRUB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmMenu());
+            Application.Run(new Form1());
         }
     }
 }
