@@ -24,6 +24,16 @@ namespace CRUB
             return dataReader;
         }
 
+        public void executeQuery(string query)
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            conn.command = new MySqlCommand(query, conn.openConnection());
+            adapter.InsertCommand = conn.command;
+            adapter.InsertCommand.ExecuteNonQuery();
+            conn.command.Dispose();
+            conn.closeConnection();
+        }
+
        
     }
 }

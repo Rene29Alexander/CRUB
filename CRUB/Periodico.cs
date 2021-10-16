@@ -28,6 +28,36 @@ namespace CRUB
             return crud.select(query);
         }
 
+        public Boolean newEditPeriodico(string action)
+        {
+            if (action == "new")
+            {
+                string query = "INSERT INTO periódico(descripcion, fecha, nombre)" +
+                    "VALUES ('" + _descripcion + "', '" + _fecha + "', '" + _nombre + "')";
+                crud.executeQuery(query);
+                return true;
+            }
+            else if (action == "edit")
+            {
+                string query = "UPDATE periódico SET "
+                    + "descripcion='" + _descripcion + "' ,"
+                    + "fecha='" + _fecha + "',"
+                    + "nombre='" + _nombre + "'"
+                    + "WHERE "
+                    + "periodicoId='" + _periodicoId + "'";
+                crud.executeQuery(query);
+                return true;
+            }
+
+            return false;
+        }
+
         
+        public Boolean deletePeriodico()
+        {
+            string query = "DELETE FROM periódico WHERE periodicoId='" + _periodicoId + "'";
+            crud.executeQuery(query);
+            return true;
+        }
     }
 }

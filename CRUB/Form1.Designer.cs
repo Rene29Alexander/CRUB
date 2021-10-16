@@ -29,48 +29,19 @@ namespace CRUB
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPeriodicoID = new MetroFramework.Controls.MetroTextBox();
             this.txtFecha = new MetroFramework.Controls.MetroTextBox();
             this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgPeriodico = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPeriodicoID = new MetroFramework.Controls.MetroTextBox();
+            this.btnEliminar = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPeriodico)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtPeriodicoID
-            // 
-            // 
-            // 
-            // 
-            this.txtPeriodicoID.CustomButton.Image = null;
-            this.txtPeriodicoID.CustomButton.Location = new System.Drawing.Point(126, 1);
-            this.txtPeriodicoID.CustomButton.Name = "";
-            this.txtPeriodicoID.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPeriodicoID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPeriodicoID.CustomButton.TabIndex = 1;
-            this.txtPeriodicoID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPeriodicoID.CustomButton.UseSelectable = true;
-            this.txtPeriodicoID.CustomButton.Visible = false;
-            this.txtPeriodicoID.Lines = new string[0];
-            this.txtPeriodicoID.Location = new System.Drawing.Point(125, 52);
-            this.txtPeriodicoID.MaxLength = 32767;
-            this.txtPeriodicoID.Name = "txtPeriodicoID";
-            this.txtPeriodicoID.PasswordChar = '\0';
-            this.txtPeriodicoID.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPeriodicoID.SelectedText = "";
-            this.txtPeriodicoID.SelectionLength = 0;
-            this.txtPeriodicoID.SelectionStart = 0;
-            this.txtPeriodicoID.ShortcutsEnabled = true;
-            this.txtPeriodicoID.Size = new System.Drawing.Size(148, 23);
-            this.txtPeriodicoID.TabIndex = 0;
-            this.txtPeriodicoID.UseSelectable = true;
-            this.txtPeriodicoID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPeriodicoID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtFecha
             // 
@@ -162,15 +133,6 @@ namespace CRUB
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "PeriodicoID";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -200,12 +162,13 @@ namespace CRUB
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(292, 392);
+            this.btnGuardar.Location = new System.Drawing.Point(214, 392);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Agregar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dtgPeriodico
             // 
@@ -215,11 +178,61 @@ namespace CRUB
             this.dtgPeriodico.Size = new System.Drawing.Size(422, 305);
             this.dtgPeriodico.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "PeriodicoID";
+            // 
+            // txtPeriodicoID
+            // 
+            // 
+            // 
+            // 
+            this.txtPeriodicoID.CustomButton.Image = null;
+            this.txtPeriodicoID.CustomButton.Location = new System.Drawing.Point(126, 1);
+            this.txtPeriodicoID.CustomButton.Name = "";
+            this.txtPeriodicoID.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPeriodicoID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPeriodicoID.CustomButton.TabIndex = 1;
+            this.txtPeriodicoID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPeriodicoID.CustomButton.UseSelectable = true;
+            this.txtPeriodicoID.CustomButton.Visible = false;
+            this.txtPeriodicoID.Lines = new string[0];
+            this.txtPeriodicoID.Location = new System.Drawing.Point(125, 52);
+            this.txtPeriodicoID.MaxLength = 32767;
+            this.txtPeriodicoID.Name = "txtPeriodicoID";
+            this.txtPeriodicoID.PasswordChar = '\0';
+            this.txtPeriodicoID.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPeriodicoID.SelectedText = "";
+            this.txtPeriodicoID.SelectionLength = 0;
+            this.txtPeriodicoID.SelectionStart = 0;
+            this.txtPeriodicoID.ShortcutsEnabled = true;
+            this.txtPeriodicoID.Size = new System.Drawing.Size(148, 23);
+            this.txtPeriodicoID.TabIndex = 0;
+            this.txtPeriodicoID.UseSelectable = true;
+            this.txtPeriodicoID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPeriodicoID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(346, 391);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseSelectable = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 450);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dtgPeriodico);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label4);
@@ -240,17 +253,17 @@ namespace CRUB
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroTextBox txtPeriodicoID;
         private MetroFramework.Controls.MetroTextBox txtFecha;
         private MetroFramework.Controls.MetroTextBox txtDescripcion;
         private MetroFramework.Controls.MetroTextBox txtNombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dtgPeriodico;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroTextBox txtPeriodicoID;
+        private MetroFramework.Controls.MetroButton btnEliminar;
     }
 }
 
